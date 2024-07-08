@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error,r2_score
 import pickle
 
-model=pickle.load(open(r"C:\Users\shiva\lr.pkl","rb"))
+model=pickle.load(open("lr.pkl","rb"))
                        
 SquareFeet =st.number_input("Enter the size of the house",min_value=1000,max_value=2999,step=50)
 Bedrooms=st.number_input("Enter the number of Bedrooms",min_value=2,max_value=5,step=1)
