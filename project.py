@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error,r2_score
 import pickle
-
+st.title("House Price Prediction")
 model=pickle.load(open("lr.pkl","rb"))
                        
 SquareFeet =st.number_input("Enter the size of the house",min_value=1000,max_value=2999,step=50)
@@ -17,4 +17,7 @@ YearBuilt=st.number_input("Enter the Year of Construction",min_value=1950,max_va
 price=model.predict([[SquareFeet,Bedrooms,Bathrooms,neighbour,YearBuilt]])
 
 st.write("the price of the house for your given details is Rs.",price)
+if st.button("Predict Price"):
+    prediction = model.predict(input_data)
+    st.write(f"The predicted price of the house is: {prediction[0]:,.2f}")
 
