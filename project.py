@@ -15,6 +15,7 @@ neighbour=1 if Neighbourhood=='Rural' else 2 if Neighbourhood=='Urban' else 3
 YearBuilt=st.number_input("Enter the Year of Construction",min_value=1950,max_value=2021,step=1)
 
 price=model.predict([[SquareFeet,Bedrooms,Bathrooms,neighbour,YearBuilt]])
+input_data = np.array([[SquareFeet, Bedrooms, Bathrooms, neighbour, YearBuilt]])
 
 st.write("the price of the house for your given details is Rs.",price)
 if st.button("Predict Price"):
